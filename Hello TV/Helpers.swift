@@ -34,3 +34,9 @@ func addDismiss(viewController: UIViewController) -> UIViewController {
     viewController.navigationItem.rightBarButtonItem = dismissButton
     return viewController
 }
+
+infix operator ==> { associativity left precedence 160 }
+
+func ==><T, U>(t: T, f: T -> U) -> U {
+    return f(t)
+}

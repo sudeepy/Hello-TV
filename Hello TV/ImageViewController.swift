@@ -10,22 +10,26 @@ import UIKit
 
 class ImageViewController : UIViewController {
     
-    let image: UIImage?
+    var image: UIImage? = nil {
+        didSet {
+            self.imageView?.image = self.image
+        }
+    }
     @IBOutlet weak var imageView: UIImageView? = nil
-    
-    init(image: UIImage) {
-        self.image = image
-        
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.imageView?.image = self.image
+    }
+    
+    func builder_setTitle(title: String?) -> ImageViewController {
+        self.title = title
+        return self
+    }
+    
+    func builder_setImage(image: UIImage?) -> ImageViewController {
+        self.image = image
+        return self
     }
 }

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9058" systemVersion="14F27" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9048"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -45,6 +46,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="127" y="357"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="Zox-68-veP">
+            <objects>
+                <viewController storyboardIdentifier="imageViewController" id="GpS-uz-ZR2" customClass="ImageViewController" customModule="Hello_TV" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a7z-jE-Ipd"/>
+                        <viewControllerLayoutGuide type="bottom" id="y3N-ag-ZOF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mtq-QI-30w">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EUH-De-FbD">
+                                <rect key="frame" x="20" y="0.0" width="1880" height="1080"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="EUH-De-FbD" firstAttribute="top" secondItem="a7z-jE-Ipd" secondAttribute="bottom" id="Fie-L5-J80"/>
+                            <constraint firstItem="y3N-ag-ZOF" firstAttribute="top" secondItem="EUH-De-FbD" secondAttribute="bottom" id="Lss-0R-l0z"/>
+                            <constraint firstItem="EUH-De-FbD" firstAttribute="leading" secondItem="Mtq-QI-30w" secondAttribute="leadingMargin" id="PBv-gc-MyP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EUH-De-FbD" secondAttribute="trailing" id="qOr-uc-I9X"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="EUH-De-FbD" id="rx7-pE-0hJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffn-0Q-qnr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1293" y="315"/>
         </scene>
     </scenes>
 </document>
